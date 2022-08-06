@@ -2,6 +2,7 @@
 Axigen Mail Server with ClamAV and SpamAssassin
 
 Self-hosting a mail server is not a simple task
+
 Keep in mind that:
  1. If you wish to send out mail you will need to create a SPF record, this record will require you to have a Static IP.
  2. Most Mail Provider (Gmail, Yahoo, etc...) will not accept your maill if your mail is not signed with DKIM, so you need to set that up too.
