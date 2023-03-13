@@ -4,4 +4,4 @@ RUN sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.o
 RUN dnf install -y spamassassin epel-release
 RUN dnf install -y clamav clamd clamav-update
 ADD ./clamd.conf /clamd.conf
-CMD freshclam && (clamd -F -c /clamd.conf &) && sa-update && (spamd &) && (sh /app/run_axigen.sh) 
+CMD (freshclam || :) && (clamd -F -c /clamd.conf &) && (sa-update || :) && (spamd &) && (sh /app/run_axigen.sh) 
